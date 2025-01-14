@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nessai_bilby-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nessai_bilby-{{ version }}.tar.gz
   sha256: 29d180a334d4f2135a92170b40ab5faef53771b5019b690ba0eaa936b1026004
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - bilby >=2.3.0
     - nessai
     - numpy
@@ -37,6 +37,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   source_files:
     - tests
     - pyproject.toml
