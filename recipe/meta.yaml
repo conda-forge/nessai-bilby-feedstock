@@ -1,5 +1,5 @@
 {% set name = "nessai-bilby" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nessai_bilby-{{ version }}.tar.gz
-  sha256: fd550dff9158c72b0cdc67d212238d4b9d7eeb1a5b9b3661a2ae96d45fc961ec
+  sha256: 223baa9183efe300e50d585e879e3afa6bc1a64f23261564f37c73e7bfaf0f03
 
 build:
   noarch: python
